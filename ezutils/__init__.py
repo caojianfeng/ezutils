@@ -1,8 +1,8 @@
-from .files import readlines, writelines
+from .files import readlines, writelines, readstr, readjson
 
 __all__ = (
     "__title__", "__summary__", "__uri__", "__version__", "__author__",
-    "__email__", "__license__", "__copyright__", readlines, writelines
+    "__email__", "__license__", "__copyright__", readlines, writelines, readstr, readjson
 )
 
 __title__ = "ezutils"

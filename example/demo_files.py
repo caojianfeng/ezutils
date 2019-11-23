@@ -2,14 +2,14 @@
 # -*- coding:utf-8 -*-
 
 import os
-from ezutils.files import readlines, writelines
+from ezutils.files import readlines, writelines, readstr, readjson
 
 
 def brother_path(filename): return os.path.join(
     os.path.dirname(__file__), filename)
 
 
-def read():
+def read_as_lines():
     lines1 = readlines(brother_path('cfg.txt'))
     print(f"lines1:{lines1}")
     '''
@@ -22,7 +22,7 @@ def read():
     '''
 
 
-def write():
+def write_as_lines():
     lines = ['hello', 'ezflines']
     writelines(lines, brother_path('cfg.txt'))
     '''
@@ -38,6 +38,21 @@ def write():
     '''
 
 
+def read_as_string():
+    string = readstr(brother_path('cfg.txt'))
+    print(f"read_as_string:\n{string}")
+
+
+def read_as_json():
+    json_obj = readjson(brother_path('cfg.json'))
+    print(f"read_as_json: type = {type(json_obj)}")
+    images = json_obj["images"]
+    for image in images:
+        print(f"read_as_json: image = {image}")
+
+
 if __name__ == "__main__":
-    write()
-    read()
+    write_as_lines()
+    read_as_lines()
+    read_as_string()
+    read_as_json()
