@@ -15,7 +15,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="esutils",
+    name="ezutils",
     version="0.0.3",
     keywords=("pip", "ezutils"),
     description="Utils to save your time on python coding",
