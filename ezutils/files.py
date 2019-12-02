@@ -37,3 +37,13 @@ def readstr(filename: str) -> str:
 def readjson(filename: str) -> dict:
     content = readstr(filename)
     return json.loads(content)
+
+
+def list_by_ext(root_dir, ext):
+    found_files = []
+    for parent, dirnames, filenames in os.walk(root_dir):
+        for filename in filenames:
+            if filename.lower().endswith(ext.lower()):
+                charset_file = os.path.join(parent, filename)
+                found_files.append(charset_file)
+    return found_files
