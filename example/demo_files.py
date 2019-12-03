@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import os
-from ezutils.files import readlines, writelines, readstr, readjson
+from ezutils.files import readlines, writelines, readstr, readjson, list_by_ext
 
 
 def brother_path(filename): return os.path.join(
@@ -51,8 +51,18 @@ def read_as_json():
         print(f"read_as_json: image = {image}")
 
 
+def find_pys():
+    files = list_by_ext('.', 'py')
+    index = 0
+    width = len(f"{len(files)}")
+    for file in files:
+        print(f"[{index:0{width}}] {file}")
+        index += 1
+
+
 if __name__ == "__main__":
     write_as_lines()
     read_as_lines()
     read_as_string()
     read_as_json()
+    find_pys()

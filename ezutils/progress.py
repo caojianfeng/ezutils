@@ -1,13 +1,34 @@
 #!/usr/bin/env python3
 import sys
-import time
 
 
-# for x in range(0, 100):
-#     sys.stdout.write("%s\r" % (str(x) + "%"))
-#     time.sleep(0.1)
-# [Python如何输出带颜色的文字方法](https://www.cnblogs.com/easypython/p/9084426.html)
-def print_progress(msg, current, max, max_width=60):
+def print_progress(current, max, msg='',  max_width=60):
+    '''
+## params:
+
+```txt
+    current: number current progress value
+    max: number  The max progress value
+    msg: string optional  Message show on progress bar.
+    max_width: number optional The limit of the length of the progress bar .
+```
+
+## example:
+
+print a colored progress bar:
+```python
+    max = 100
+    for i in range(max + 1):
+        print_progress(f"MSG:ABC({i})", i, max)
+        time.sleep(0.01)
+```
+output:
+```txt
+MSG:ABC(3)                            [03.00%]
+MSG:ABC(100)                          [ DONE ]
+```
+    '''
+    # [Python如何输出带颜色的文字方法](https://www.cnblogs.com/easypython/p/9084426.html)
     padding = ' '
     if len(msg) > max_width:
         msg = f"{msg[0:max_width-3]}..."
@@ -34,14 +55,3 @@ def print_progress(msg, current, max, max_width=60):
         sys.stdout.write('\n')
 
     sys.stdout.flush()
-
-
-if __name__ == '__main__':
-    max = 100
-    for i in range(max + 1):
-        print_progress(
-            "TODO：解决中文长度问题1223123.csv            (%d)" % i, i, max)
-        # print_progress(
-        #     " ", i, max, 100)
-        time.sleep(0.01)
-    # print('\033[0m')

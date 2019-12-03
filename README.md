@@ -8,7 +8,7 @@ Life is short we use ezutils !
 pip install ezutils
 ```
 
-## 2. Using
+## 2. Using files
 
 ### 2.1 readlines:
 
@@ -72,15 +72,16 @@ filename: file tobe read
 #### 2.4.2 return dict from json parse
 
 
-## 3. Demo
+## 2.5 DEMO
 
+example/demo_files.py
 ```python
 
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
 import os
-from ezutils.files import readlines, writelines, readstr, readjson
+from ezutils.files import readlines, writelines, readstr, readjson, list_by_ext
 
 
 def brother_path(filename): return os.path.join(
@@ -129,15 +130,48 @@ def read_as_json():
         print(f"read_as_json: image = {image}")
 
 
+def find_pys():
+    files = list_by_ext('.', 'py')
+    index = 0
+    width = len(f"{len(files)}")
+    for file in files:
+        print(f"[{index:0{width}}] {file}")
+        index += 1
+
+
 if __name__ == "__main__":
     write_as_lines()
     read_as_lines()
     read_as_string()
     read_as_json()
-
+    find_pys()
 
 ```
+## 3 Using progress
 
+### 3.1 print_progress
+
+print_progress(msg, current, max, max_width=60)
+
+### Demo
+
+example/demo_files.py
+
+```python
+
+#!/usr/bin/env python3
+#demo_progress.py
+
+import time
+
+from ezutils.progress import print_progress
+
+if __name__ == '__main__':
+    max = 100
+    for i in range(max + 1):
+        print_progress("MSG:ABC(%d)" % i, i, max)
+        time.sleep(0.01)
+```
 ## TODO:
 
 ### pillow utils
