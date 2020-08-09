@@ -17,7 +17,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="ezutils",
     version="0.0.5",
-    keywords=("pip", "ezutils"),
+    keywords=["color", "file", "progress", "ezutils"],
     description="Utils to save your time on python coding",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -30,7 +30,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     include_package_data=True,
     platforms="any",
-    # install_requires=["Pillow", "pngquant"],
+    install_requires=[],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
