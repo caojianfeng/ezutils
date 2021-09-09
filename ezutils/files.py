@@ -29,7 +29,7 @@ def read_as_lines():
     return new_lines
 
 
-def writelines(lines: List, filename: str, append_newline: bool = True) -> None:
+def writelines(lines: List[str], filename: str, append_newline: bool = True) -> None:
     '''
 # params
 ```txt
