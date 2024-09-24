@@ -17,7 +17,7 @@ def read_as_lines():
     print(f"lines1:{lines1}")
 ```
     '''
-    with open(os.path.abspath(filename), 'r') as f:
+    with open(os.path.abspath(filename), 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
     if not strip_newline:
@@ -60,7 +60,7 @@ output:
         else:
             newlines.append(line)
 
-    with open(filename, 'w') as f:
+    with open(filename, 'w', encoding='utf-8') as f:
         f.writelines(newlines)
 
 
@@ -85,7 +85,7 @@ def read_as_string():
 
 ```
     '''
-    with open(filename, 'r') as f:
+    with open(filename, 'r', encoding='utf-8') as f:
         content = f.read()
     return content
 

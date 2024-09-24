@@ -11,7 +11,7 @@ __title__ = "ezutils"
 __summary__ = "Utils to save your time on python coding"
 __uri__ = "https://github.com/caojianfeng/ezutils"
 
-__version__ = "0.0.5"
+__version__ = "0.0.6"
 
 __author__ = "JeffreyCao"
 __email__ = "je255reycao@stufft.io"
